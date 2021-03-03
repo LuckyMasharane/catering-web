@@ -14,29 +14,33 @@
         <a href="#">About</a>
     </div>
     <div class="main">
-        <h2>Add New Product</h2>
+        <h2>Add New Gallery</h2>
         <div class="container" style="border-style: groove">
             <mat-grid-list cols="2">
                 <mat-grid-tile>
                     <form [formGroup]="contactForm">
-                        <h2>Enter Product Info</h2>
+                        <h2>Enter Gallery Info</h2>
                         <div class="form-group">
                             <input matInput formControlName="name" class="form-control"
-                                placeholder="Name of the Product">
+                                placeholder="Name of the Gallery">
                         </div>
 
                         <div class="form-group">
                             <input matInput formControlName="description" class="form-control"
-                                placeholder="Product Description">
+                                placeholder="Description">
+                        </div>
+                        <div class="form-group">
+                            <input matInput formControlName="category" class="form-control"
+                                placeholder="Category">
                         </div>
                         <div class="form-group">
                             <input matInput formControlName="picture" class="form-control"
-                                placeholder="Product Picture">
+                                placeholder="Picture">
                         </div>
 
                         <div>
-                            <button mat-raised-button routerLink="" type="submit" color="accent" (click)="onSubmit()">
-                                Add Product<i class="material-icons">add</i>
+                            <button  style="margin-top: 20px; " mat-raised-button routerLink="" type="submit" color="accent" (click)="onSubmit()">
+                                Add Gallery<i class="material-icons">add</i>
                             </button>
                         </div>
                     </form>
@@ -44,7 +48,7 @@
                 </mat-grid-tile>
                 <mat-grid-tile>
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                        <img src="../../assets/img/Logo.PNG"
                             class="card-img-top" alt="...">
                     </div>
                 </mat-grid-tile>

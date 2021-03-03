@@ -17,6 +17,7 @@ export class AddGalleryComponent implements OnInit {
     this.contactForm = this._formBuilder.group({
       id: Math.floor(Math.random() * 50),
       name: "",
+      category:"",
       description: "",
       picture: ""
     });

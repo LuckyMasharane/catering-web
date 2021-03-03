@@ -4,13 +4,13 @@
 
 export const environment = {
   production: false,
-  firebaseConfig :{
-    apiKey: "AIzaSyBu3qGuW64FLit2D2Ojz9Yy0SR-rRy0UdQ",
-    authDomain: "catering-web.firebaseapp.com",
-    projectId: "catering-web",
-    storageBucket: "catering-web.appspot.com",
-    messagingSenderId: "1052623530216",
-    appId: "1:1052623530216:web:662628668fb19c403dc15d"
+  firebaseConfig : {
+    apiKey: "AIzaSyCfWmkjTsN5R2kMG41c82aRTup51UPrepU",
+    authDomain: "catering-app-ecca7.firebaseapp.com",
+    projectId: "catering-app-ecca7",
+    storageBucket: "catering-app-ecca7.appspot.com",
+    messagingSenderId: "899333868399",
+    appId: "1:899333868399:web:3fdb61e380b0a66d15369a"
   }
 };
 

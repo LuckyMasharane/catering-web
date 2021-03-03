@@ -36,3 +36,10 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+  h2{
+    text-align: center;
+    color: gray;
+    font-size: 20;
+    margin-top: 50px;
+  
+  }

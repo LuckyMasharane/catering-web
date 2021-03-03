@@ -25,6 +25,7 @@ export class GalleryService {
     this.db.collection("gallery").doc(Id.toString()).set({
       // id: this.productLists.length + 1,
       name: prod.name,
+      category:prod.category,
       description: prod.description,
       picture: prod.picture,
 
