@@ -20,9 +20,9 @@
             <div class="container">
                 <a mat-raised-button style="margin-top: 50px;" routerLink="/add-gallery">Add Gallery</a>
                 <mat-grid-list cols="4">
-                    <mat-grid-tile  *ngFor="let pic of pic">
+                    <mat-grid-tile  *ngFor="let galleryPic of galleryPic">
                         <mat-card class="example-card" style="margin-bottom:40px">
-                            <img mat-card-image src={{pic.empImage}} alt="...">
+                            <img mat-card-image src={{galleryPic.picture}} alt="...">
                             <!-- <mat-card-title> </mat-card-title>
                             <mat-card-subtitle>
                                years
