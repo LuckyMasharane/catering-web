@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GalleryService } from '../gallery.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class AddGalleryComponent implements OnInit {
 
   public contactForm!: FormGroup;
   
-  constructor(private _formBuilder: FormBuilder, private gallery: GalleryService) { }
+  constructor(private _formBuilder: FormBuilder, private gallery: GalleryService, private router: Router) { }
 
   ngOnInit(): void {
     this.contactForm = this._formBuilder.group({
@@ -25,6 +26,7 @@ export class AddGalleryComponent implements OnInit {
 
   onSubmit() {
     this.gallery.addGallery(this.contactForm?.value);
+    this.router.navigate(['/home']);
   }
 
 }

@@ -11,23 +11,23 @@ import { AuthenticationService } from '../authentication.service';
 export class LoginComponent implements OnInit {
 
   public contactForm: FormGroup;
-  email : any
+  email: any
   password: any
   loggonInUser: any
-  constructor(private authent: AuthenticationService,private router: Router,private _formBuilder: FormBuilder) { 
+  constructor(private authent: AuthenticationService, private router: Router, private _formBuilder: FormBuilder) {
     this.contactForm = this._formBuilder.group({
       email: "",
       password: ""
     });
-   }
+  }
 
   ngOnInit(): void {
     //this.authent.getCurrentUser()
 
   }
-  
 
-  login(){
+
+  login() {
     console.log(this.contactForm.value.email);
     this.authent.signInUser(this.contactForm.value.email, this.contactForm.value.password)
     this.loggonInUser = this.authent.userInfo

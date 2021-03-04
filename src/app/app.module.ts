@@ -17,13 +17,15 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { environment } from '../environments/environment';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainComponent,
-    AddGalleryComponent
+    AddGalleryComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
