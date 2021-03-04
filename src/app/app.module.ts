@@ -18,6 +18,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { environment } from '../environments/environment';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { QuotationComponent } from './quotation/quotation.component';
+import { RequestComponent } from './request/request.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     LoginComponent,
     MainComponent,
     AddGalleryComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    QuotationComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,

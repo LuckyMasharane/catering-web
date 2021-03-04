@@ -8,8 +8,8 @@
 <body>
     <!-- Side navigation -->
     <div class="sidenav">
-        <a href="#">Request</a>
-        <a href="#">Quotation</a>
+        <a href="request">Request</a>
+        <a href="quotation">Quotation</a>
         <a href="#">Contact</a>
         <a href="#">About</a>
     </div>
@@ -18,7 +18,7 @@
     <div class="main">
         <div >
             <div class="container">
-                <a mat-raised-button style="margin-top: 50px; margin-bottom: 50px;" routerLink="/add-gallery">Add Gallery</a>
+                <a mat-raised-button style="margin-top: 50px; margin-bottom: 50px;" routerLink="home/add-gallery">Add Gallery</a>
                 <mat-grid-list cols="4">
                     <mat-grid-tile  *ngFor="let galleryPic of galleryPic">
                         <mat-card class="example-card" style="margin-bottom:40px">
