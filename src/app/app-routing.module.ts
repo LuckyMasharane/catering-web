@@ -12,7 +12,6 @@ const routes: Routes = [
   { path:"home", component: MainComponent },
   { path: "add-gallery", component: AddGalleryComponent },
   { path: "reset-password", component: ResetPasswordComponent },
-  { path: "quotation", component: QuotationComponent },
   { path: "request", component: RequestComponent }
 
 ];

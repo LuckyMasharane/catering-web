@@ -8,6 +8,7 @@ import { Gallery } from './gallery'
 export class GalleryService {
 
   gallery:any
+  request:any;
 
   constructor(private db: AngularFirestore) { }
 
@@ -15,6 +16,8 @@ export class GalleryService {
 
    getAllGallery() {
     this.gallery = this.db.collection("gallery").snapshotChanges()  
+    
+    
     return this.gallery;  
   }
 
@@ -37,18 +40,19 @@ export class GalleryService {
         console.error("Error writing document: ", error);
       });
   }
-  
 
   // firebase
-
   updateProduct(prod:Gallery){
     
     this.db.doc('gallery/' + prod).update(prod);
 
   }
-
   // firebase
   deleteProduct(id: number){
     this.db.doc('gallery/' + id).delete()
+  }
+  getAllRequest(){
+    this.request = this.db.collection("Request").snapshotChanges()  
+    return this.request;
   }
 }
