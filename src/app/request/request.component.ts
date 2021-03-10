@@ -32,7 +32,7 @@ export class RequestComponent implements OnInit {
     this.getAllReq()
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
+  displayedColumns: string[] = ['category', 'eventType', 'address', 'message', 'action'];
   //dataSource =  ELEMENT_DATA;
 
 

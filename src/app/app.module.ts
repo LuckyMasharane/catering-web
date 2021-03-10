@@ -5,7 +5,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { RequestComponent } from './request/request.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatSelectModule,
     MatButtonModule,
     MatTableModule,
     MatCardModule,
