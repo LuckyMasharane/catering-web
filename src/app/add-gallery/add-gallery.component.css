@@ -6,7 +6,7 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: black ; /* Black */
+    background-color : rgb(219, 214, 214); /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 50px;
   }
@@ -16,7 +16,7 @@
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: black;
     display: block;
   }
   
@@ -41,5 +41,12 @@
     color: gray;
     font-size: 20;
     margin-top: 50px;
+    font-family: Josefin Sans;
+    
+
   
+  }
+  .main{
+    font-family: Josefin Sans;
+    
   }
