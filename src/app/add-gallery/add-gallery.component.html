@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="home">Home</a>
+        <a href="/request">Request</a>
+
+    </div>
+    <div class="main">
+        <h2>Add New Gallery</h2>
+        <div class="container" style="border-style: groove;border-radius: 20px;">
+            <mat-grid-list cols="2">
+                <mat-grid-tile>
+                    <form [formGroup]="contactForm">
+                        <h2>Enter Gallery Info</h2>
+                        <div class="form-group">
+                            <input matInput formControlName="name" style="margin-bottom: 20px; border-radius: 20px;"
+                                class="form-control" placeholder="Name of the Gallery">
+                        </div>
+
+                        <div class="form-group">
+                            <input matInput formControlName="description"
+                                style="margin-bottom: 20px; border-radius: 20px;" class="form-control"
+                                placeholder="Description">
+                        </div>
+
+                        <div class="form-group">
+                            <mat-form-field appearance="fill" style="margin-bottom: 10px; border-radius: 20px;">
+                                <mat-label>Select Category</mat-label>
+                                <mat-select formControlName="category">
+                                  <mat-option>None</mat-option>
+                                  <mat-option value="Food">Food</mat-option>
+                                  <mat-option value="Decor">Decor</mat-option>
+                                  <mat-option value="Equipment">Equipment</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            <!-- <input matInput formControlName="category" style="margin-bottom: 20px; border-radius: 20px;"
+                                class="form-control" placeholder="Category"> -->
+                        </div>
+
+                        <div class="form-group">
+                            <input matInput formControlName="picture" style="border-radius: 20px;" class="form-control"
+                                placeholder="Picture">
+                        </div>
+
+                        <div>
+                            <button style="margin-top: 20px; border-radius: 20px; " mat-raised-button routerLink=""
+                                type="submit" color="accent" (click)="onSubmit()">
+                                Add Gallery<i class="material-icons">add</i>
+                            </button>
+                        </div>
+                    </form>
+
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="card" style="border-radius: 20px;">
+                        <img src="../../assets/img/Logo.PNG" style="border-radius: 20px;" class="card-img-top"
+                            alt="...">
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+</body>
+
+</html>
