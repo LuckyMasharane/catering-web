@@ -1,0 +1,12 @@
+.main {
+    margin-left: 160px; 
+    padding: 0px 10px;  
+}
+
+h2{
+    text-align: center;
+    color: gray;
+    font-size: 20;
+    margin-top: 50px;
+    font-family: Josefin Sans;
+}
