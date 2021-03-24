@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { EmailService } from '../email.service';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-email-reply',
@@ -13,12 +14,11 @@ export class EmailReplyComponent implements OnInit {
 
   public form!: FormGroup;
 
-  constructor(private _FORM: FormBuilder, private _EMAIL: EmailService) {
+  constructor(private _FORM: FormBuilder,private router: Router) {
     this.form = this._FORM.group({
-      "to": ["", Validators.required],
-      "cc": ["", Validators.required],
-      "bcc": ["", Validators.required],
-      "subject": ["", Validators.required],
+      "to_name": ["", Validators.required],
+      "reply_to": ["", Validators.required],
+      "from_name": ["", Validators.required],
       "message": ["", Validators.required]
     });
   }
@@ -26,11 +26,12 @@ export class EmailReplyComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public sendEmail(e: Event) {
+  public sendEmail(e) {
     e.preventDefault();
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target as HTMLFormElement, 'YOUR_USER_ID')
+    emailjs.sendForm('service_nqbfjf6', 'template_5q3spwo', e.target, 'user_GFDVAhPriAVbcHGK9NXRQ')
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text);
+        this.router.navigate(['/request'])
       }, (error) => {
         console.log(error.text);
       });
