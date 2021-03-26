@@ -17,7 +17,7 @@ export class EmailReplyComponent implements OnInit {
   constructor(private _FORM: FormBuilder,private router: Router) {
     this.form = this._FORM.group({
       "to_name": ["", Validators.required],
-      "reply_to": ["", Validators.required],
+      "email": ["", Validators.required],
       "from_name": ["", Validators.required],
       "message": ["", Validators.required]
     });
@@ -27,10 +27,12 @@ export class EmailReplyComponent implements OnInit {
   }
 
   public sendEmail(e) {
+    console.log(this.form.value);
+    
     e.preventDefault();
     emailjs.sendForm('service_nqbfjf6', 'template_5q3spwo', e.target, 'user_GFDVAhPriAVbcHGK9NXRQ')
       .then((result: EmailJSResponseStatus) => {
-        console.log(result.text);
+        console.log("email sent " + result.text);
         this.router.navigate(['/request'])
       }, (error) => {
         console.log(error.text);
