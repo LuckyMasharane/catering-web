@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { EmailService } from '../email.service';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { Router } from '@angular/router';
+import { GalleryService } from '../gallery.service';
 
 @Component({
   selector: 'app-email-reply',
@@ -14,12 +15,12 @@ export class EmailReplyComponent implements OnInit {
 
   public form!: FormGroup;
 
-  constructor(private _FORM: FormBuilder,private router: Router) {
+  constructor(private _FORM: FormBuilder,private router: Router, private gallery:GalleryService) {
     this.form = this._FORM.group({
-      "to_name": ["", Validators.required],
-      "email": ["", Validators.required],
-      "from_name": ["", Validators.required],
-      "message": ["", Validators.required]
+      to_name: "",
+      email: "",
+      from_name:"",
+      message: ""
     });
   }
 
@@ -27,11 +28,11 @@ export class EmailReplyComponent implements OnInit {
   }
 
   public sendEmail(e) {
-    console.log(this.form.value);
     
     e.preventDefault();
     emailjs.sendForm('service_nqbfjf6', 'template_5q3spwo', e.target, 'user_GFDVAhPriAVbcHGK9NXRQ')
       .then((result: EmailJSResponseStatus) => {
+        this.gallery.addmessage(this.form.value.message)
         console.log("email sent " + result.text);
         this.router.navigate(['/request'])
       }, (error) => {
@@ -39,16 +40,10 @@ export class EmailReplyComponent implements OnInit {
       });
   }
 
-
-  // sendMessage(): void {
-  //   let to: string = this.form.controls["to"].value,
-  //     cc: string = this.form.controls["cc"].value,
-  //     bcc: string = this.form.controls["cc"].value,
-  //     subject: string = this.form.controls["subject"].value,
-  //     message: string = this.form.controls["message"].value;
+  message(){
+    console.log("mes ",this.form.value.message);
     
-  //   this._EMAIL.sendEmail(to, cc, bcc, subject, message);
-
-  // }
+    this.gallery.addmessage(this.form.value.message)
+  }
 
 }

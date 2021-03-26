@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore'
 import { Gallery } from './gallery'
+import { Message } from './message';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class GalleryService {
 
   gallery:any
   request:any;
-
+  userID = localStorage.getItem('userID');
   constructor(private db: AngularFirestore) { }
 
    // firebase
@@ -54,5 +55,20 @@ export class GalleryService {
   getAllRequest(){
     this.request = this.db.collection("Request").snapshotChanges()  
     return this.request;
+  }
+
+  addmessage(prod: Message) {
+    let Id = Math.floor(Math.random() * 200);
+    this.db.collection("Message").doc(Id.toString()).set({
+      // id: this.productLists.length + 1,
+      message: prod.message
+
+    })
+      .then(function () {
+        console.log("Document successfully written!");
+      })
+      .catch(function (error) {
+        console.error("Error writing document: ", error);
+      });
   }
 }
